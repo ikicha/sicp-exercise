@@ -1,0 +1,18 @@
+#lang racket
+(define (square x) (* x x))
+(define (square-sum-of-two-big-num a b c)
+  (cond ((and (>= a c) (>= b c)) (+ (square a) (square b)))
+        ((and (>= a b) (>= c b)) (+ (square a) (square c)))
+        (else (+ (square c) (square b)))
+        ))
+
+(square-sum-of-two-big-num 1 1 1)
+(square-sum-of-two-big-num 2 1 1)
+(square-sum-of-two-big-num 1 2 1)
+(square-sum-of-two-big-num 1 1 2)
+(square-sum-of-two-big-num 1 2 3)
+(square-sum-of-two-big-num 1 3 2)
+(square-sum-of-two-big-num 2 1 3)
+(square-sum-of-two-big-num 2 3 1)
+(square-sum-of-two-big-num 3 1 2)
+(square-sum-of-two-big-num 3 2 1)
